@@ -1,0 +1,41 @@
+easy_admin:
+    site_name: 'ArquiNea'
+    design:
+        brand_color: '#7f1818'
+        assets:
+            favicon: '/assets/general/images/icono.png'
+        menu:
+            # - { label: 'Panel Principal', route: 'dashboard', icon: 'caret-down', default: true ,role: ['ROLE_DASHBOARD']}
+            
+            - {label: 'Publicaciones' , entity: 'Publicacion', icon: 'building'}
+            - {label: 'Documentos' , entity: 'Documento', icon: 'file'}
+            - {label: 'Contactos' , entity: 'Contacto', icon: 'book'}
+            - {label: 'Imagen' , entity: 'Imagen', icon: 'image'}
+            - {label: 'Usuarios' , entity: 'User', icon: 'users'}
+    entities:
+        Publicacion:
+            class: App\Entity\Publicacion
+            form:
+                fields:
+                    - { property: 'Titulo', type: 'text' }
+                    - { property: 'Arquitecto', type: 'text' }
+                    - { property: 'Descripcion', type: 'text' }
+                    - { property: 'imageFile', type: 'file' }
+                    - { property: 'imagenes', label: 'Galeria de Imagenes', type: 'collection', type_options: { entry_type: 'App\Form\ImagenType', by_reference: false }}
+        Documento:
+            class: App\Entity\Documento
+            form:
+                fields:
+                    - { property: 'titulo', type: 'text' }
+                    - { property: 'descripcion', type: 'text' }
+                    - { property: 'imageFile', type: 'file' }
+        Contacto:
+            class: App\Entity\Contacto
+        User:
+            class: App\Entity\User
+        Imagen:
+            class: App\Entity\Imagen
+            form:
+                fields:
+                    - { property: 'pie', type: 'text' }
+                    - { property: 'imageFile', type: 'file' }

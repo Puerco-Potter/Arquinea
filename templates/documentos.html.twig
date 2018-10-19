@@ -1,0 +1,24 @@
+{% extends "index.html.twig" %}
+
+{% block title %}ARQUINEA: Obras{% endblock %}
+        
+        {% block body %}
+        <div class="container bg-light">
+            <hr>
+                {% for documento in documentos %}
+                    <h3>
+                        {{ documento.titulo }}
+                    </h3>
+                    <p>
+                        {{ documento.descripcion }}
+                    </p>
+                    <a href="{{asset('documentos/'~documento.archivo)}}">
+                        Descargar
+                    </a>
+                {% endfor %}
+                <hr>
+        </div>
+        {% endblock %}
+
+{% block javascripts %}
+{% endblock %}

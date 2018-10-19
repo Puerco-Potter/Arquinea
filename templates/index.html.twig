@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}ARQUINEA{% endblock %}</title>
+        <link rel='icon' type='image/png' href="{{ asset('images/monkey.png') }}" />
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% endblock %}
+    </head>
+    <body class="bg-dark">
+        <h3>
+                Soy una imagen, niegenmenlon
+                <i class="fab fa-accessible-icon"></i>
+        </h3>
+    	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="{{ path('index') }}">ARQUINEA</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ path('index') }}"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ path('obras') }}"><i class="fas fa-hotel"></i> Obras</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ path('documentos') }}"><i class="fas fa-file-signature"></i> Documentos</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ path('contactos') }}"><i class="fas fa-address-book"></i> Contacos</a>
+		      </li>
+		  </div>
+		</nav>
+		<div>
+		</div>
+
+        {% block body %}
+        <div class="container bg-light">
+            <h2>
+                Obras destacadas:
+            </h2>
+            <hr>
+            {% for publicacion in publicaciones %}
+                <h3>
+                    {{ publicacion.titulo }}
+                </h3>
+                <h4>
+                    {{ publicacion.arquitecto }}
+                </h4>
+                <img src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid">
+                <p>
+                    {{ publicacion.descripcion }}
+                </p>
+                <p>
+                    Seguir leyendo
+                </p>
+                <p>
+                    Facebook
+                </p>
+                <p>
+                    Twitter
+                </p>
+                <hr>
+            {% endfor %}
+            
+        </div>
+        {% endblock %}
+
+        {% block footer %}
+       	<div class="d-flex justify-content-center text-light bg-dark">
+       		<div>
+	       		<div class="d-flex justify-content-center">
+	       			<div>Pagina creada por Grupo de Desarrollo <a href="http://www.100monos.com">100monos</a></div>
+	       		</div>
+	       		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	       	</div>
+       	</div>
+        {% endblock %}
+        <script src="{{ asset('build/app.js') }}"></script>
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

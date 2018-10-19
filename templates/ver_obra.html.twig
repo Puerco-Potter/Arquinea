@@ -1,0 +1,38 @@
+{% extends "index.html.twig" %}
+
+{% block title %}ARQUINEA: Obras{% endblock %}
+        
+        {% block body %}
+        <div class="container bg-light">
+            <hr>
+                <h3>
+                    {{ publicacion.titulo }}
+                </h3>
+                <h4>
+                    {{ publicacion.arquitecto }}
+                </h4>
+                <img src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid">
+                <p>
+                    {{ publicacion.descripcion }}
+                </p>
+                
+                <div>
+                    <h4>
+                        Galeria
+                    </h4>
+                    {% for imagen in publicacion.imagenes %}
+                    <img src="{{asset('obras/imagenes/'~imagen.path)}}" class="img-fluid">
+                    {% endfor %}
+                </div>
+                <p>
+                    Facebook
+                </p>
+                <p>
+                    Twitter
+                </p>
+                <hr>
+        </div>
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}

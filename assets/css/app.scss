@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../AnimateIt/css/animations.css';
+@import '~footable/compiled/footable.standalone.css';
+@import '~Font-Awesome/css/font-awesome.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+$acceVerde: #84a640;
+$acceAzul: #396696;
+$colormarca : green;
+
+h1 {
+    color: $colormarca;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h3 {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+.marca {
+	color:$colormarca;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+html, body {
+    height: 100%;
+}
+
+.pantalla {
+    min-height:100%;
+}
+
+
+.parallax {
+ 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo {
+	
+} 

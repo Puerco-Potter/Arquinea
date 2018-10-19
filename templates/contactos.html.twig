@@ -1,0 +1,21 @@
+{% extends "index.html.twig" %}
+
+{% block title %}ARQUINEA: Obras{% endblock %}
+        
+        {% block body %}
+        <div class="container bg-light">
+            <hr>
+                {% for contacto in contactos %}
+                    <h3>
+                        {{ contacto.titulo }}
+                    </h3>
+                    <p>
+                        {{ contacto.informacion }}
+                    </p>
+                {% endfor %}
+                <hr>
+        </div>
+        {% endblock %}
+
+{% block javascripts %}
+{% endblock %}
