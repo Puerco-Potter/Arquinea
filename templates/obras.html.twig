@@ -3,9 +3,16 @@
 {% block title %}ARQUINEA: Obras{% endblock %}
         
         {% block body %}
-        <div class="container bg-light">
+        <div class="container container-normal bg-light">
+            <hr>
+            <div class="d-flex justify-content-center fondo-negro">
+                <h2>
+                    Listado De Obras:
+                </h2>
+            </div>
+            <hr>
                         <!-- Table Markup -->
-            <table class="table footable" data-filtering="true" data-sorting="true">
+            <table class="table footable" data-filtering="true" data-sorting="true" data-paging="true" data-paging-size="2">
                 <thead>
                     <tr>
                         <th>Numero Publicación</th>
@@ -26,17 +33,6 @@
                 </tbody>
             </table>
         </div>
-        {% endblock %}
-
-        {% block footer %}
-       	<div class="d-flex justify-content-center text-light bg-dark">
-       		<div>
-	       		<div class="d-flex justify-content-center">
-	       			<div>Pagina creada por Grupo de Desarrollo <a href="http://www.100monos.com">100monos</a></div>
-	       		</div>
-	       		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-	       	</div>
-       	</div>
         {% endblock %}
 
         {% block javascripts %}

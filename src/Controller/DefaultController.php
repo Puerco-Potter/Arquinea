@@ -2,25 +2,36 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 //entidades
 use App\Entity\Publicacion;
 use App\Entity\Contacto;
 use App\Entity\Documento;
 
-class DefaultController extends AbstractController
+class DefaultController extends Controller
 {
     /**
      * @Route("/index", name="index")
      */
-    public function index()
+    public function index(Request $request)
     {
         $publicaciones = $this->getDoctrine()
         ->getRepository(Publicacion::class)
         ->findAll();
+    
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $publicaciones, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            1/*limit per page*/
+        );
+
         return $this->render('index.html.twig', [
-            "publicaciones" => $publicaciones
+            "publicaciones" => $publicaciones,
+            "pagination" => $pagination
         ]);
     }
 

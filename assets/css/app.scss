@@ -7,18 +7,13 @@
 
 $acceVerde: #84a640;
 $acceAzul: #396696;
-$colormarca : green;
+$colormarca : #e1cead;
 
 h1 {
     color: $colormarca;
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-
-h3 {
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
 
 .marca {
 	color:$colormarca;
@@ -27,15 +22,6 @@ h3 {
 .navbar .navbar-brand {
     font-weight: bold;
 }
-
-html, body {
-    height: 100%;
-}
-
-.pantalla {
-    min-height:100%;
-}
-
 
 .parallax {
  
@@ -46,6 +32,20 @@ html, body {
     background-size: cover;
 }
 
-.titulo {
-	
-} 
+.fondo-negro {
+    background-color: #232021;
+    color: #e1cead !important;
+}
+.fondo-navbar{
+    background-image: linear-gradient(#c29c69, #e1cead);
+}
+
+.container-normal{
+    color: #232021;
+}
+.banner {
+    height:200px;
+    width:100%;
+    background-image:url('images/marca.jpg');
+    background-size: cover; 
+}

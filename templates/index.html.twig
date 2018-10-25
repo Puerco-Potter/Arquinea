@@ -7,13 +7,18 @@
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% endblock %}
+
+        <style>
+        </style>
+
     </head>
-    <body class="bg-dark">
-        <h3>
-                Soy una imagen, niegenmenlon
-                <i class="fab fa-accessible-icon"></i>
-        </h3>
-    	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body class="fondo-negro">
+        <div class="banner d-flex justify-content-center align-items-center">
+            <h1><big><big>
+                ARQUINEA
+            </big></big></h1>
+        </div>
+    	<nav class="navbar navbar-expand-lg navbar-light fondo-navbar">
 		  <a class="navbar-brand" href="{{ path('index') }}">ARQUINEA</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -39,44 +44,62 @@
 		</div>
 
         {% block body %}
-        <div class="container bg-light">
-            <h2>
-                Obras destacadas:
-            </h2>
+        <div class="container container-normal bg-light">
             <hr>
-            {% for publicacion in publicaciones %}
-                <h3>
-                    {{ publicacion.titulo }}
-                </h3>
-                <h4>
-                    {{ publicacion.arquitecto }}
-                </h4>
-                <img src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid">
-                <p>
-                    {{ publicacion.descripcion }}
-                </p>
-                <p>
-                    Seguir leyendo
-                </p>
-                <p>
-                    Facebook
-                </p>
-                <p>
-                    Twitter
-                </p>
-                <hr>
-            {% endfor %}
+            <div class="d-flex justify-content-center fondo-negro">
+                <h2>
+                    Ultimas Obras:
+                </h2>
+            </div>
+            <hr>
             
+            {# table body #}
+            {% for publicacion in pagination %}
+                <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    
+                    <div class="d-flex justify-content-center">
+                        <h2>
+                            {{ publicacion.titulo }}
+                        </h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                            <h2>
+                            <img src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid">
+                            </h2>
+                    </div>
+                    <h4>
+                        Arquitecto: {{ publicacion.arquitecto }}
+                    </h4>
+                    <p>
+                        {{ publicacion.descripcion }}
+                    </p>
+                    <p>
+                        Seguir leyendo
+                    </p>
+                    <p>
+                        Facebook
+                    </p>
+                    <p>
+                        Twitter
+                    </p>
+                    <hr>
+                </tr>
+            {% endfor %}
+            {# display navigation #}
+            
+            <div class="d-flex justify-content-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
         </div>
         {% endblock %}
 
         {% block footer %}
-       	<div class="d-flex justify-content-center text-light bg-dark">
+       	<div class="d-flex justify-content-center text-light fondo-negro">
        		<div>
 	       		<div class="d-flex justify-content-center">
 	       			<div>Pagina creada por Grupo de Desarrollo <a href="http://www.100monos.com">100monos</a></div>
 	       		</div>
-	       		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	       		<div>Wallpaper-in-black-and-gold <a href='https://www.freepik.com/free-vector/modern-mosaic-wallpaper-in-black-and-gold_3229638.htm'>Designed by Rawpixel.com</a></div>
 	       	</div>
        	</div>
         {% endblock %}
