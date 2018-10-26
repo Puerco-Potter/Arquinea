@@ -109,10 +109,12 @@
                         Arquitecto: {{ publicacion.arquitecto }}
                     </h4>
                     <p>
-                        {{ publicacion.descripcion }}
+                        {% autoescape false %}
+                            {{ publicacion.descripcion|striptags|slice(0, 300) }}...
+                        {% endautoescape %}
                     </p>
                     <p>
-                        Seguir leyendo
+                        <a class="btn btn-light boton-dorado float-right" href="{{ path('obra', {'id': publicacion.id}) }}">Seguir Leyendo</a>
                     </p>
                     <p>
                         Facebook

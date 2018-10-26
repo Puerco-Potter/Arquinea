@@ -19,8 +19,8 @@ easy_admin:
                 fields:
                     - { property: 'Titulo', type: 'text' }
                     - { property: 'Arquitecto', type: 'text' }
-                    - { property: 'Descripcion', type: 'text' }
-                    - { property: 'imageFile', type: 'file' }
+                    - { property: 'Descripcion', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'}
+                    - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'imagenes', label: 'Galeria de Imagenes', type: 'collection', type_options: { entry_type: 'App\Form\ImagenType', by_reference: false }}
         Documento:
             class: App\Entity\Documento
@@ -28,7 +28,7 @@ easy_admin:
                 fields:
                     - { property: 'titulo', type: 'text' }
                     - { property: 'descripcion', type: 'text' }
-                    - { property: 'imageFile', type: 'file' }
+                    - { property: 'imageFile', type: 'vich_image' }
         Contacto:
             class: App\Entity\Contacto
         User:
@@ -38,4 +38,4 @@ easy_admin:
             form:
                 fields:
                     - { property: 'pie', type: 'text' }
-                    - { property: 'imageFile', type: 'file' }
+                    - { property: 'imageFile', type: 'vich_image' }
