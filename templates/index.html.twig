@@ -9,6 +9,44 @@
         {% endblock %}
 
         <style>
+            .pagination>.page-item>.page-link{
+                background-color: #232021;
+                color:#e1cead;
+            }
+
+            .pagination>.disabled>.page-link{
+                color:grey;
+            }
+            .pagination>.active>.page-link{
+                background-color: #e1cead;
+                color:#232021;
+                border-color: #c29c69;
+            }
+
+            .pagination>.footable-page>.footable-page-link, .pagination>.footable-page-nav>.footable-page-link{
+                background-color: #232021;
+                color:#e1cead;
+            }
+
+            .footable .pagination > .disabled > a{
+                background-color: #232021;
+                color:grey;
+            }
+
+            .footable .pagination > .active > a, .footable .pagination > .active > span{
+                background-color: #e1cead;
+                color:#232021;
+                border-color: #c29c69;
+            }
+
+            .boton-dorado{
+                background-color: #e1cead;
+            }
+
+            .footable-filtering-search>.input-group>.input-group-btn>.btn-primary{
+                background-color: #e1cead !important;
+                border-color: #c29c69;
+            }
         </style>
 
     </head>
@@ -20,7 +58,7 @@
         </div>
     	<nav class="navbar navbar-expand-lg navbar-light fondo-navbar">
 		  <a class="navbar-brand" href="{{ path('index') }}">ARQUINEA</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 

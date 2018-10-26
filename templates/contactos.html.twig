@@ -4,7 +4,13 @@
         
         {% block body %}
         <div class="container container-normal bg-light">
-            <hr>
+                <hr>
+                <div class="d-flex justify-content-center fondo-negro">
+                    <h2>
+                        Contactos:
+                    </h2>
+                </div>
+                <hr>
                 {% for contacto in contactos %}
                     <h3>
                         {{ contacto.titulo }}

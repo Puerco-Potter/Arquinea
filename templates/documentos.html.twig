@@ -4,7 +4,13 @@
         
         {% block body %}
         <div class="container container-normal bg-light">
-            <hr>
+                <hr>
+                <div class="d-flex justify-content-center fondo-negro">
+                    <h2>
+                        Documentos:
+                    </h2>
+                </div>
+                <hr>
                 {% for documento in documentos %}
                     <h3>
                         {{ documento.titulo }}
@@ -12,7 +18,7 @@
                     <p>
                         {{ documento.descripcion }}
                     </p>
-                    <a href="{{asset('documentos/'~documento.archivo)}}">
+                    <a class="btn btn-light boton-dorado" href="{{asset('documentos/'~documento.archivo)}}">
                         Descargar
                     </a>
                 {% endfor %}
