@@ -16,19 +16,19 @@
             data-paging="true" data-paging-size="2" data-filter-placeholder="Buscar">
                 <thead>
                     <tr>
-                        <th>Numero Publicación</th>
                         <th>Titulo</th>
                         <th>Arquitecto</th>
                         <th>Imagen</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for publicacion in publicaciones %}
                         <tr>
-                            <td>{{ publicacion.id }}</td>
                             <td>{{ publicacion.titulo }}</td>
                             <td>{{ publicacion.arquitecto }}</td>
-                            <td><img src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid"></td>
+                            <td><img width="100px" src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid"></td>
+                            <td><a class="btn btn-light boton-dorado w-100" href="{{ path('obra', {'id': publicacion.id}) }}">Ver Publicacion</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

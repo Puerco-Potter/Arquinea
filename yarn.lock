@@ -1823,6 +1823,10 @@ domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
+donkeyGallery@Gix075/donkeyGallery:
+  version "0.0.0"
+  resolved "https://codeload.github.com/Gix075/donkeyGallery/tar.gz/bc6b039bba3ddbe00635a27d7e55bcf0e8813e9b"
+
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npmjs.org/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -4342,6 +4346,10 @@ performance-now@^0.2.0:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+photoswipe@dimsemenov/PhotoSwipe:
+  version "4.1.2"
+  resolved "https://codeload.github.com/dimsemenov/PhotoSwipe/tar.gz/fc9ce1a28b8533a732f8f5d5859cc84a4cb4ce0e"
 
 pify@^2.0.0:
   version "2.3.0"
