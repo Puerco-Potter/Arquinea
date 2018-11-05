@@ -32,7 +32,7 @@
                     </h4>
                     <div id="my-gallery-id"></div>
                     {% for imagen in publicacion.imagenes %}
-                    <img src="{{asset('obras/imagenes/'~imagen.path)}}" class="img-fluid">
+                    <img src="{{ asset('obras/imagenes/'~imagen.path) | imagine_filter('squared_thumbnail') }}" />
                     {% endfor %}
                 </div>
                 <p>

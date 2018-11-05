@@ -57,7 +57,7 @@ class DefaultController extends Controller
         ->getRepository(Publicacion::class)
         ->find($id);
         return $this->render('ver_obra.html.twig', [
-            "publicacion" => $publicacion,
+            "publicacion" => $publicacion
         ]);
     }
 
