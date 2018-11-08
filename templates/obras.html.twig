@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ publicacion.titulo }}</td>
                             <td>{{ publicacion.arquitecto }}</td>
-                            <td><img width="100px" src="{{asset('obras/imagenes/'~publicacion.imagen)}}" class="img-fluid"></td>
+                            <td><img width="100px" src="{{ ('obras/imagenes/'~publicacion.imagen) | imagine_filter('squared_thumbnail') }}" class="img-fluid"></td>
                             <td><a class="btn btn-light boton-dorado w-100" href="{{ path('obra', {'id': publicacion.id}) }}">Ver Publicacion</a></td>
                         </tr>
                     {% endfor %}
