@@ -41,9 +41,15 @@
                 <p>
                     Twitter
                 </p>
+                <section
+                data-featherlight-gallery
+                data-featherlight-filter="a"
+                >
+                <h>This is a gallery</h>
+                    {% for imagen in publicacion.imagenes %}
+                        <a href="{{ asset('obras/imagenes/'~imagen.path) }}"><img src="{{ ('obras/imagenes/'~imagen.path) | imagine_filter('squared_thumbnail') }}"></a>
+                    {% endfor %}
+                </section> 
                 <hr>
         </div>
-        {% endblock %}
-
-        {% block javascripts %}
         {% endblock %}

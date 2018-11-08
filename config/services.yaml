@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'es'
+    ruta_imagenes: /obras/imagenes
+    ruta_imagenes_admin: /arquinea/public/obras/imagenes
+    ruta_documentos: /arquinea/public/documentos
 
 services:
     # default configuration for services in *this* file

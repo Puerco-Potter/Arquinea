@@ -1,7 +1,7 @@
 easy_admin:
     site_name: 'ArquiNea'
     design:
-        brand_color: '#7f1818'
+        brand_color: '#896840'
         assets:
             favicon: '/assets/general/images/icono.png'
         menu:
@@ -22,13 +22,24 @@ easy_admin:
                     - { property: 'Descripcion', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'}
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'imagenes', label: 'Galeria de Imagenes', type: 'collection', type_options: { entry_type: 'App\Form\ImagenType', by_reference: false }}
+            list:
+                fields:
+                    - { property: 'Titulo', type: 'text' }
+                    - { property: 'Arquitecto', type: 'text' }
+                    - { property: 'Imagen', label: 'Imagen principal', type: 'image', base_path: '%ruta_imagenes_admin%' }
+            show:
+                fields:
+                    - { property: 'Titulo', type: 'text' }
+                    - { property: 'Arquitecto', type: 'text' }
+                    - { property: 'Imagen', label: 'Imagen principal', type: 'image', base_path: '%ruta_imagenes_admin%' }
+                    - { property: 'imagenes', label: 'Galeria de Imagenes', type: 'collection'}
         Documento:
             class: App\Entity\Documento
             form:
                 fields:
                     - { property: 'titulo', type: 'text' }
                     - { property: 'descripcion', type: 'text' }
-                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'imageFile', label: 'archivo' , type: 'vich_file' }
         Contacto:
             class: App\Entity\Contacto
         User:
@@ -38,4 +49,4 @@ easy_admin:
             form:
                 fields:
                     - { property: 'pie', type: 'text' }
-                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'imageFile', label: 'imagen', type: 'vich_image' }

@@ -4,9 +4,13 @@ import * as AnimateIt from '../AnimateIt/js/css3-animate-it.js';
 import 'bootstrap';
 
 import 'footable/compiled/footable.js';
-import 'donkeyGallery/dnk-gallery/js/jquery.donkeyGallery.packed.min.js';
+import 'featherlight/release/featherlight.min.js';
+import 'featherlight/release/featherlight.gallery.min.js';
 import '../css/app.scss';
-
 
 $('.footable').footable();
 
+$('a.gallery').featherlightGallery({
+    galleryFadeIn: 100,          /* fadeIn speed when slide is loaded */
+    galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+});
