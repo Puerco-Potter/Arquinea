@@ -47,4 +47,8 @@ class PublicacionRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllDSC()
+    {
+        return $this->findBy(array(), array('id' => 'DESC'));
+    }
 }

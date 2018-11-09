@@ -14,14 +14,15 @@ use App\Entity\Documento;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/", name="index")
      */
     public function index(Request $request)
     {
         $publicaciones = $this->getDoctrine()
         ->getRepository(Publicacion::class)
-        ->findAll();
-    
+        //->findAll();
+        ->findAllDSC();
+
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $publicaciones, /* query NOT result */
