@@ -20,7 +20,7 @@ easy_admin:
                     - { property: 'Titulo', type: 'text' }
                     - { property: 'Arquitecto', type: 'text' }
                     - { property: 'Descripcion', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'}
-                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'imageFile', type: 'vich_image', type_options: { required: false, allow_delete: false}  }
                     - { property: 'imagenes', label: 'Galeria de Imagenes', type: 'collection', type_options: { entry_type: 'App\Form\ImagenType', by_reference: false }}
             list:
                 fields:

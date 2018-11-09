@@ -26,30 +26,28 @@
                 {% endautoescape %}
                 
                 
-                <div>
-                    <h4>
-                        Galeria de Fotos:
-                    </h4>
-                    <div id="my-gallery-id"></div>
-                    {% for imagen in publicacion.imagenes %}
-                    <img src="{{ asset('obras/imagenes/'~imagen.path) | imagine_filter('squared_thumbnail') }}" />
-                    {% endfor %}
-                </div>
+                
                 <p>
                     Facebook
                 </p>
                 <p>
                     Twitter
                 </p>
-                <section
-                data-featherlight-gallery
-                data-featherlight-filter="a"
-                >
-                <h>This is a gallery</h>
-                    {% for imagen in publicacion.imagenes %}
-                        <a href="{{ asset('obras/imagenes/'~imagen.path) }}"><img src="{{ ('obras/imagenes/'~imagen.path) | imagine_filter('squared_thumbnail') }}"></a>
-                    {% endfor %}
-                </section> 
+                <div>
+                    
+                    <section
+                    data-featherlight-gallery
+                    data-featherlight-filter="a"
+                    >
+                    <h4>
+                        Galeria de Fotos:
+                    </h4>
+                        {% for imagen in publicacion.imagenes %}
+                            <a href="{{ asset('obras/imagenes/'~imagen.path) }}"><img src="{{ ('obras/imagenes/'~imagen.path) | imagine_filter('squared_thumbnail') }}"></a>
+                        {% endfor %}
+                    </section>
+                </div>
+                
                 <hr>
         </div>
         {% endblock %}
