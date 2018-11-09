@@ -129,7 +129,7 @@ class Publicacion
         return $this->Imagen;
     }
 
-    public function setImagen(string $Imagen): self
+    public function setImagen($Imagen): self
     {
         $this->Imagen = $Imagen;
 
