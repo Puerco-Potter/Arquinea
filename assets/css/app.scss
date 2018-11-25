@@ -1,8 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 @import '../AnimateIt/css/animations.css';
-@import '~footable/compiled/footable.standalone.css';
-@import '~Font-Awesome/css/font-awesome.css';
-@import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~featherlight/release/featherlight.min.css';
 @import '~featherlight/release/featherlight.gallery.min.css';
 
@@ -45,10 +42,4 @@ h1 {
 
 .container-normal{
     color: #232021;
-}
-.banner {
-    height:200px;
-    width:100%;
-    background-image:url('images/marca.jpg');
-    background-size: cover; 
 }
