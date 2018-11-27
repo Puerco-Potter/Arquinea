@@ -1,0 +1,492 @@
+/*!
+ *
+ *  donkeyGallery - [v1.2.1]
+ *  asynchronous ajax/php dynamic gallery
+ *  webPage: http://factory.brainleaf.eu/donkeyGallery/
+ *  githubPage: https://github.com/Gix075/donkeyGallery
+ *
+ *  (c)2014 by BRAINLEAF Communication
+ *  Made by Gildo Giuliani
+ *  Released under MIT License
+ *  Date: 17/05/2014
+ *
+ *  Please, report any bugs at: https://github.com/Gix075/donkeyGallery/issues
+ *
+
+*/
+.dnk-gallery-loader {
+    background-image: url(../assets/ajax-loader-black.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 200px;
+}
+
+.dnk-gallery {
+     display: none;
+}
+
+.dnk-gallery-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+.dnk-gallery-list li {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.dnk-gallery-list li img {
+    vertical-align: middle;
+    -webkit-transition: opacity 0.2s ease;
+            transition: opacity 0.2s ease;
+}
+
+.dnk-gallery ol {
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding:0;
+}
+
+.dnk-gallery ol li {
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: background 0.2s ease, color 0.2s ease;
+            transition: background 0.2s ease, color 0.2s ease;
+    
+}
+.dnk-gallery ol li:hover {
+    
+}
+.dnk-gallery ol li.active,
+.dnk-gallery ol li.active:hover {
+    font-weight: 700;
+}
+.dnk-gallery ol li.prev:after {
+   content: " - ";
+}
+.dnk-gallery ol li.next:before {
+   content: " - ";
+}
+
+
+/* ################################################################## */
+/* GALLERY STYLES */
+/* ################################################################## */
+
+
+/* squared */
+/* ================================================================== */
+.squared.dnk-gallery-list li {
+    padding: 20px;
+} 
+.squared.dnk-gallery-list li:hover > img,
+.squared.dnk-gallery-list li:hover > a img {
+    opacity: 0.7;
+}
+
+ol.squared  {
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding:0;
+}
+
+ol.squared li {
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 10px;
+    
+}
+ol.squared li:hover {
+}
+ol.squared li.active,
+ol.squared li.active:hover {
+}
+ol.squared li.prev:after {
+   content: "";
+}
+ol.squared li.next:before {
+   content: "";
+}
+
+
+/* tin-squared */
+/* ================================================================== */
+.tin-squared.dnk-gallery-list li {
+    padding: 5px;
+} 
+.tin-squared.dnk-gallery-list li:hover > img,
+.tin-squared.dnk-gallery-list li:hover > a img {
+    opacity: 0.7;
+}
+ol.tin-squared  {
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding:0;
+}
+
+ol.tin-squared li {
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1px 4px;
+    
+}
+ol.tin-squared li:hover {
+}
+ol.tin-squared li.active,
+ol.tin-squared li.active:hover {
+}
+ol.tin-squared li.prev:after {
+   content: "";
+}
+ol.tin-squared li.next:before {
+   content: "";
+}
+
+/* circle */
+/* ================================================================== */
+.circle.dnk-gallery-list li {
+    padding: 5px;
+    border-radius: 50%;
+} 
+.circle.dnk-gallery-list li img {
+    border-radius: 50%;
+}
+.circle.dnk-gallery-list li:hover > img,
+.circle.dnk-gallery-list li:hover > a img {
+    opacity: 0.7;
+}
+ol.circle  {
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding:0;
+}
+
+ol.circle li {
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    
+}
+ol.circle li:hover {
+}
+ol.circle li.active,
+ol.circle li.active:hover {
+}
+ol.circle li.prev {
+    text-indent: 0;
+    border-radius: 8px;
+    width: auto;
+    padding: 0 10px;
+    line-height: 20px;
+}
+ol.circle li.next {
+    text-indent: 0;
+    border-radius: 8px;
+    width: auto;
+    padding: 0 10px;
+    line-height: 20px;
+}
+ol.circle li.prev:after {
+   content: "";
+}
+ol.circle li.next:before {
+   content: "";
+}
+
+/* fluid */
+/* this style is an "helper style" to make other styles fluid */
+/* ================================================================== */
+
+/* other styles resets for fluid adjustment */
+.fluid.squared.dnk-gallery-list li {
+    padding: 0!important;
+} 
+.fluid.squared li .innerbox {
+    padding: 20px;
+} 
+.fluid.tin-squared.dnk-gallery-list li {
+    padding: 0!important;
+} 
+.fluid.tin-squared li .innerbox {
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px;
+} 
+.fluid.circle.dnk-gallery-list li {
+    padding: 0!important;
+    border-radius: 0!important;
+}
+.fluid.circle li .innerbox {
+    padding: 5px;
+}
+.fluid.circle li .innerbox img {
+    border-style: solid;
+    border-width: 6px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;  
+	box-sizing: border-box;  
+}
+
+/* fluid common style */
+.fluid li {
+    background-color: transparent!important;
+    margin: 0;
+}
+.fluid li .innerbox {
+    margin: 5px;
+}
+
+.fluid li .innerbox img {
+    width: 100%;
+}
+
+.fluid-10 li {
+    width: 10%;
+}
+.fluid-20 li {
+    width: 20%;
+}
+.fluid-25 li {
+    width: 25%;
+}
+.fluid-33 li {
+    width: 33.3333%;
+}
+.fluid-50 li {
+    width: 50%;
+}
+.fluid-100 li {
+    width: 100%;
+}
+
+
+/* ################################################################## */
+/* COLORS */
+/* ################################################################## */
+
+
+/* black */
+/* ================================================================== */
+.black.dnk-gallery-list li,
+.black.fluid li .innerbox {
+    background-color: #000;
+} 
+.black.circle.fluid li .innerbox {
+    background-color: transparent;
+} 
+.black.circle.fluid li .innerbox img {
+    border-color: #000;
+}
+ol.squared.black li,
+ol.tin-squared.black li,
+ol.circle.black li {
+    background-color: #000;
+    color: #fff;
+    
+}
+ol.squared.black li:hover,
+ol.tin-squared.black li:hover,
+ol.circle.black li:hover {
+    background-color: #999;
+    color: #fff;
+}
+ol.squared.black li.active,
+ol.squared.black li.active:hover,
+ol.tin-squared.black li.active,
+ol.tin-squared.black li.active:hover,
+ol.circle.black li.active,
+ol.circle.black li.active:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* white */
+/* ================================================================== */
+.white.dnk-gallery-list li,
+.white.fluid li .innerbox {
+    background-color: #fff;
+} 
+.white.circle.fluid li .innerbox {
+    background-color: transparent;
+} 
+.white.circle.fluid li .innerbox img {
+    border-color: #fff;
+}
+ol.squared.white li,
+ol.tin-squared.white li,
+ol.circle.white li {
+    background-color: #fff;
+    color: #555;
+}
+ol.squared.white li:hover,
+ol.tin-squared.white li:hover,
+ol.circle.white li:hover {
+    background-color: #ccc;
+    color: #555;
+}
+ol.squared.white li.active,
+ol.squared.white li.active:hover,
+ol.tin-squared.white li.active,
+ol.tin-squared.white li.active:hover,
+ol.circle.white li.active,
+ol.circle.white li.active:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+
+/* gray */
+/* ================================================================== */
+.gray.dnk-gallery-list li,
+.gray.fluid li .innerbox {
+    background-color: #ccc;
+} 
+.gray.circle.fluid li .innerbox {
+    background-color: transparent;
+} 
+.gray.circle.fluid li .innerbox img {
+    border-color: #ccc;
+}
+ol.squared.gray li,
+ol.tin-squared.gray li,
+ol.circle.gray li {
+    background-color: #ccc;
+    color: #555;
+    
+}
+ol.squared.gray li:hover,
+ol.tin-squared.gray li:hover,
+ol.circle.gray li:hover {
+    background-color: #efefef;
+}
+ol.squared.gray li.active,
+ol.squared.gray li.active:hover,
+ol.tin-squared.gray li.active,
+ol.tin-squared.gray li.active:hover,
+ol.circle.gray li.active,
+ol.circle.gray li.active:hover {
+    background-color: #999;
+    color: #fff;
+}
+
+/* magenta */
+/* ================================================================== */
+.magenta.dnk-gallery-list li,
+.magenta.fluid li .innerbox {
+    background-color: #FA075C;
+} 
+.magenta.circle.fluid li .innerbox {
+    background-color: transparent;
+} 
+.magenta.circle.fluid li .innerbox img {
+    border-color: #FA075C;
+}
+ol.squared.magenta li,
+ol.tin-squared.magenta li,
+ol.circle.magenta li {
+    background-color: #FA075C;
+    color: #555;
+    
+}
+ol.squared.magenta li:hover,
+ol.tin-squared.magenta li:hover,
+ol.circle.magenta li:hover {
+    background-color: #ff2f78;
+}
+ol.squared.magenta li.active,
+ol.squared.magenta li.active:hover,
+ol.tin-squared.magenta li.active,
+ol.tin-squared.magenta li.active:hover,
+ol.circle.magenta li.active,
+ol.circle.magenta li.active:hover {
+    background-color: #ff0059;
+    color: #fff;
+}
+
+/* cyan */
+/* ================================================================== */
+.cyan.dnk-gallery-list li,
+.cyan.fluid li .innerbox {
+    background-color: #04d9d9;
+} 
+.cyan.circle.fluid li .innerbox {
+    background-color: transparent;
+} 
+.cyan.circle.fluid li .innerbox img {
+    border-color: #04d9d9;
+}
+ol.squared.cyan li,
+ol.tin-squared.cyan li,
+ol.circle.cyan li {
+    background-color: #04d9d9;
+    color: #555;
+    
+}
+ol.squared.cyan li:hover,
+ol.tin-squared.cyan li:hover,
+ol.circle.cyan li:hover {
+    background-color: #15fafa;
+}
+ol.squared.cyan li.active,
+ol.squared.cyan li.active:hover,
+ol.tin-squared.cyan li.active,
+ol.tin-squared.cyan li.active:hover,
+ol.circle.cyan li.active,
+ol.circle.cyan li.active:hover {
+    background-color: #06e5e5;
+    color: #fff;
+}
+
+
+/* ******************************************************************************** */
+/* MEDIA QUERIES 
+/* ******************************************************************************** */
+
+/* End ExtraLarge Desktop */
+@media only screen and (max-width:1979px) {
+    
+}
+
+/* End Large Desktop */
+@media only screen and (max-width:1599px) {
+
+}
+
+/* End Medium Desktop */
+@media only screen and (max-width:1279px) {
+
+}
+
+/* End Small Desktop & Landscape Tablet */
+@media only screen and (max-width:1023px) {
+
+}
+
+/* End Small Tablet */
+@media only screen and (max-width:859px) {
+
+}
+
+/* End Portrait Tablet */
+@media only screen and (max-width:767px) {
+
+}
+/* End Smartphone Landscape */
+@media only screen and (max-width:480px) {
+
+}
+
+/* End Portrait Phone */
+@media only screen and (max-width:320px) {
+    
+}

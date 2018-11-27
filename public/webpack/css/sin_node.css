@@ -1,0 +1,48 @@
+@import '../bootstrap/css/bootstrap.min.css';
+@import '../footable/compiled/footable.standalone.css';
+@import '../Font-Awesome/css/font-awesome.css';
+@import '../@fortawesome/fontawesome-free/css/all.css';
+@import '../featherlight/release/featherlight.min.css';
+@import '../featherlight/release/featherlight.gallery.min.css';
+
+.banner {
+    height:200px;
+    width:100%;
+    background-image:url('../../images/marca.jpg');
+    background-size: cover; 
+}
+
+h1 {
+    color: #e1cead;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.marca {
+	color:#e1cead;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+.parallax {
+ 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondo-negro {
+    background-color: #232021;
+    color: #e1cead !important;
+}
+.fondo-navbar{
+    background-image: linear-gradient(#c29c69, #e1cead);
+}
+
+.container-normal{
+    color: #232021;
+}

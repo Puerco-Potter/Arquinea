@@ -5,8 +5,7 @@
         <title>{% block title %}ARQUINEA{% endblock %}</title>
         <link rel='icon' type='image/png' href="{{ asset('images/AN.png') }}" />
         {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/sin_node.css') }}">
+        <link rel="stylesheet" href="{{ asset('webpack/css/sin_node.css') }}">
         {% endblock %}
 
         <style>
@@ -144,7 +143,12 @@
 	       	</div>
        	</div>
         {% endblock %}
-        <script src="{{ asset('build/app.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-git.js"></script>
+        <script src="{{ asset('webpack/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('webpack/footable/compiled/footable.js') }}"></script>
+        <script src="{{ asset('webpack/featherlight/release/featherlight.min.js') }}"></script>
+        <script src="{{ asset('webpack/featherlight/release/featherlight.gallery.min.js') }}"></script>
+        <script src="{{ asset('webpack/js/sin_node.js') }}"></script>
         {% block javascripts %}
         {% endblock %}
     </body>
