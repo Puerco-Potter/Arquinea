@@ -6,7 +6,7 @@ vich_uploader:
             delete_on_update: true
             delete_on_remove: true
             uri_prefix: '%ruta_imagenes_admin%'
-            upload_destination: '%kernel.project_dir%/public/obras/imagenes'
+            upload_destination: '%kernel.project_dir%%public%%ruta_imagenes%'
         archivo_documento:
-            uri_prefix: '%ruta_documentos%'
-            upload_destination: '%kernel.project_dir%/public/documentos'
+            uri_prefix: '%ruta_documentos_admin%'
+            upload_destination: '%kernel.project_dir%%public%%ruta_documentos%'
