@@ -6,10 +6,10 @@
 parameters:
     locale: 'es'
     ruta_imagenes: /obras/imagenes
-    ruta_imagenes_admin: /arquinea/public/obras/imagenes
+    ruta_imagenes_admin: /obras/imagenes
     ruta_documentos: /documentos
-    ruta_documentos_admin: /arquinea/public/documentos
-    public: /public
+    ruta_documentos_admin: /documentos
+    public: /public_html
 
 services:
     # default configuration for services in *this* file
